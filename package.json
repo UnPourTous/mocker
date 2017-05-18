@@ -1,0 +1,19 @@
+{
+  "name": "mocker",
+  "version": "1.0.0",
+  "description": "Mocker data generator",
+  "main": "Mocker.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.oschina.net/23lab/mocker.git"
+  },
+  "keywords": [
+    "Mock",
+    "JS"
+  ],
+  "author": "erichua",
+  "license": "MIT"
+}
