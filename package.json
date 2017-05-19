@@ -23,6 +23,7 @@
     "babel-preset-latest": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babel-preset-stage-3": "^6.24.1",
+    "chai": "^3.5.0",
     "mocha": "^3.4.1",
     "numeral": "^2.0.6",
     "randexp": "^0.4.5"
