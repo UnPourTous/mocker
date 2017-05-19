@@ -1,11 +1,11 @@
-# mocker
-## Introduction
+# Mocker
+## 0. Introduction
 
-## Installation
+## 1. Installation
 ```
 npm install @unpourtous/mocker --save
 ```
-## Quick Start
+## 2. Quick Start
 a) First, define your object, the object schema.
 ``` js
 import { Types } from '@unpourtous/mocker'
@@ -30,9 +30,9 @@ const mockerObject = Mocker.mockObject(objectSchema)
 //   default: 'Z' 
 // }
 ```
-## API
+## 3. API
 
-## Test & Demo
+## 4. Test & Demo
 All test case was put in `test/`
 Test result: 
 ```
@@ -45,7 +45,7 @@ Test result:
       ✓ enum should be one of the array
 ```
 
-## Thanks 
+## 5. Thanks 
 - [Randexp.js](http://fent.github.io/randexp.js/) used to generate random string match a specified regexp
 - [Numeral.js](http://numeraljs.com/) as number format library
 - [Chai](http://chaijs.com) as test assert library
