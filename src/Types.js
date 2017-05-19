@@ -6,10 +6,8 @@ const _ = require('lodash')
 const RandExp = require('randexp')
 
 class TPNumber {
-  static name = 'number'
-
   name () {
-    return TPNumber.name
+    return 'number'
   }
 
   constructor () {
@@ -59,17 +57,26 @@ class TPNumber {
 }
 
 class TPString {
-  static name = 'string'
-
+  static preDefRegExpMap = {
+    date: new RegExp(/(19|20)\d\d([-])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])/),
+  }
   name () {
-    return TPString.name
+    return 'string'
   }
 
-  constructor () {
+  constructor (preDefRegExpKey) {
     this._fixValue = null
     this._minLength = 0 // default min length
     this._maxLength = 10 // default max length
-    this._regExp = null
+    if (_.isString(preDefRegExpKey)) {
+      if (TPString.preDefRegExpMap[preDefRegExpKey]) {
+        this._regExp = TPString.preDefRegExpMap[preDefRegExpKey]
+      } else {
+        throw new Error('Only ' + TPString.preDefRegExpMap.keys() + ' are supported')
+      }
+    } else {
+      this._regExp = null
+    }
   }
 
   fixValue (value) {
@@ -93,6 +100,7 @@ class TPString {
     if (!_.isRegExp(regExp)) {
       throw new Error('regExp should be a RegExp object')
     }
+
     this._regExp = regExp
     return this
   }
@@ -107,10 +115,9 @@ class TPString {
 }
 
 class TPBoolean {
-  static name = 'boolean'
 
   name () {
-    return TPBoolean.name
+    return 'boolean'
   }
 
   fixValue (value) {
@@ -127,10 +134,9 @@ class TPBoolean {
 }
 
 class TPEnum {
-  static TPEnum = 'enum'
-
   name () {
-    return TPEnum.name
+    return 'enum'
+
   }
 
   constructor (enumVals) {
@@ -149,6 +155,6 @@ class TPEnum {
 export default {
   boolean: () => new TPBoolean(),
   number: () => new TPNumber(),
-  string: () => new TPString(),
+  string: (preDefRegKey) => new TPString(preDefRegKey),
   enum: (array) => new TPEnum(array),
 }
