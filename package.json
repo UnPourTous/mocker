@@ -1,5 +1,5 @@
 {
-  "name": "mocker",
+  "name": "@unpourtous/mocker",
   "version": "1.0.0",
   "description": "Mocker data generator",
   "main": "index.js",
