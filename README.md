@@ -1,5 +1,6 @@
 # Mocker
 ## 0. Introduction
+Mocker is a simple and lightweight library for generating random js object as predefind schema. 
 
 ## 1. Installation
 ```
@@ -7,6 +8,7 @@ npm install @unpourtous/mocker --save
 ```
 ## 2. Quick Start
 a) First, define your object, the object schema.
+
 ``` js
 import { Types } from '@unpourtous/mocker'
 let objectSchema = {
@@ -18,6 +20,7 @@ let objectSchema = {
 }
 ```
 b) Secondly, use Mocker to generate a random object.
+
 ``` js
 import { Mocker } from '@unpourtous/mocker'
 const mockerObject = Mocker.mockObject(objectSchema)
@@ -30,7 +33,23 @@ const mockerObject = Mocker.mockObject(objectSchema)
 //   default: 'Z' 
 // }
 ```
-## 3. API
+## 3. Detail Types & API
+### string
+API | Description
+--- | --- 
+range(int min, int max) | Set min and max length for string, this is only used if this string dose not set `regExp`
+regExp(RegExp regExp) | Set regExp for this string, if this is set, the generated string match this regexp.
+
+### number
+
+### enum
+
+### boolean
+
+
+
+
+### APIS 
 
 ## 4. Test & Demo
 All test case was put in `test/`
