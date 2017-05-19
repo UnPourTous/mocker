@@ -6,7 +6,7 @@ Mocker is a simple and lightweight library for generating random js object as pr
 ```
 npm install @unpourtous/mocker --save
 ```
-## 2. Quick Start
+## 2. Usage
 a) First, define your object, the object schema.
 
 ``` js
