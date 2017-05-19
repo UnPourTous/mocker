@@ -52,7 +52,8 @@ regExp(RegExp regExp) | Set regExp for this string, if this is set, the generate
 ### APIS 
 
 ## 4. Test & Demo
-All test case was put in `test/`
+All test case was put in `test/`.
+
 Test result: 
 ```
   Mocker
