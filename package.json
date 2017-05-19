@@ -1,6 +1,6 @@
 {
   "name": "@unpourtous/mocker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Mocker data generator",
   "main": "index.js",
   "scripts": {
@@ -17,12 +17,12 @@
   "author": "erichua",
   "license": "MIT",
   "devDependencies": {
-    "babel-preset-latest": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "babel-preset-stage-3": "^6.24.1",
     "babel-register": "^6.24.1"
   },
   "dependencies": {
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
     "mocha": "^3.4.1",
     "numeral": "^2.0.6",
     "randexp": "^0.4.5"
