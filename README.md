@@ -36,22 +36,32 @@ const mockerObject = Mocker.mockObject(objectSchema)
 // }
 ```
 ## 3. Detail Types & API
-### string()
+### String
 API | Description
 --- | --- 
+string() | Create a instance of TPString.
 range(min, max) | Set min and max length for string, this is only used if this string dose not set `regExp`
 regExp(regExp) | Set regExp for this string, if this is set, the generated string match this regexp.
 fixValue(fixValue) | Set fix value
 
-### number()
+### Number
+API | Description
+--- | --- 
+number() | Create a instance of Number.
 range (min, max) | Set min value and  max value for number
 format(format) | Set number format, get more detail from [Numeral.js](http://numeraljs.com/)
 fixValue(fixValue) | Set fix value
 
-### enum(enumValues)
-return any of `enumValues`.
+### Enum
+API | Description
+--- | --- 
+enum(enumValues) | Create a instance of Enum. `enumValues` should be a array containers all possible value.
 
-### boolean()
+
+### Boolean
+API | Description
+--- | --- 
+boolean() | Create a instance of Boolean.
 fixValue(fixValue) | Set fix value
 
 ### APIS 
