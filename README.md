@@ -3,7 +3,7 @@
 [![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
 # Mocker
 ## 0. Introduction
-Mocker is a simple and lightweight library for generating random js object as predefind schema. 
+Mocker is a simple and lightweight library which is used for generating random js object as defined schema. 
 ## 1. Installation
 ```
 npm install @unpourtous/mocker --save
