@@ -36,14 +36,24 @@ const mockerObject = Mocker.mockObject(objectSchema)
 // }
 ```
 ## 3. Detail Types & API
-### string
+### string()
 API | Description
 --- | --- 
-range(int min, int max) | Set min and max length for string, this is only used if this string dose not set `regExp`
-regExp(RegExp regExp) | Set regExp for this string, if this is set, the generated string match this regexp.
-### number
-### enum
-### boolean
+range(min, max) | Set min and max length for string, this is only used if this string dose not set `regExp`
+regExp(regExp) | Set regExp for this string, if this is set, the generated string match this regexp.
+fixValue(fixValue) | Set fix value
+
+### number()
+range (min, max) | Set min value and  max value for number
+format(format) | Set number format, get more detail from [Numeral.js](http://numeraljs.com/)
+fixValue(fixValue) | Set fix value
+
+### enum(enumValues)
+return any of `enumValues`.
+
+### boolean()
+fixValue(fixValue) | Set fix value
+
 ### APIS 
 ## 4. Test & Demo
 All test case was put in `test/`.
