@@ -50,9 +50,9 @@ class TPNumber {
 
     const randomValue = (this._max - this._min) * Math.random() + this._min
     if (this._format) {
-      return numeral(randomValue).format(this._format)
+      return numeral(randomValue).format(this._format) * 1
     }
-    return randomValue
+    return randomValue * 1
   }
 }
 

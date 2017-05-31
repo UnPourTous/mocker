@@ -3,13 +3,17 @@ const expect = require('chai').expect
 import { Mocker, Types } from '../'
 describe('Mocker', function () {
   describe('mockerObject', function () {
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 1; i++) {
       const objectSchema = {
         stringDate: Types.string('date'),
         stringRange: Types.string().range(10, 100),
         numberRange: Types.number().range(0, 100),
         enum: Types.enum(['A', 'B', 'C']),
         default: '',
+        plainObject: {
+          far: Types.string(),
+          bar: Types.number()
+        },
         stringArray: [Types.string()],
         objectArray: [{
           far: Types.string(),
@@ -33,11 +37,17 @@ describe('Mocker', function () {
       })
 
       it(`default should be a string`, function () {
-        expect(mockerObject.numberRange).be.a('string')
+        expect(mockerObject.default).be.a('string')
       })
 
       it(`enum should be one of the array`, function () {
         expect(mockerObject.enum).to.be.oneOf(['A', 'B', 'C'])
+      })
+
+      it(`plainObject should be an object`, function () {
+        expect(mockerObject.plainObject).to.be.an('object')
+        expect(mockerObject.plainObject.far).to.be.an('string')
+        expect(mockerObject.plainObject.bar).to.be.a('number')
       })
 
       it(`stringArray should be an array contains string`, function () {
