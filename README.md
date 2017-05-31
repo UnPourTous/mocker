@@ -5,10 +5,10 @@
 ## 0. Introduction
 Mocker is a simple and lightweight library which is used for generating random js object as defined schema. 
 
-### Features Your May Like
-1. Lightweight: only 4 basic type
-2. Extendable: string type support RegExp which allow your to generate custom type, but we support array and object too
-3. Non-invasive: keep all properties key clean, do not modify it since you may need it anywhere else.
+### Features
+1. **Lightweight**: only 4 basic type, pretty easy to get start.
+2. **Extendable**: string type support RegExp which allow your to generate custom type, but we support array and object too
+3. **Non-invasive**: keep all properties key clean, do not modify it since you may need it anywhere else.
 
 ## 1. Installation
 ```
