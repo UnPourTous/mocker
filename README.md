@@ -4,6 +4,12 @@
 # Mocker
 ## 0. Introduction
 Mocker is a simple and lightweight library which is used for generating random js object as defined schema. 
+
+### Features Your May Like
+1. Lightweight: only 4 basic type
+2. Extendable: string type support RegExp which allow your to generate custom type, but we support array and object too
+3. Non-invasive: keep all properties key clean, do not modify it since you may need it anywhere else.
+
 ## 1. Installation
 ```
 npm install @unpourtous/mocker --save
@@ -18,8 +24,13 @@ const objectSchema = {
   stringRange: Types.string().range(10, 100),
   numberRange: Types.number().range(0, 100),
   enum: Types.enum(['A', 'B', 'C']),
-  default: '', // If a valid type was set, it will generate a random string
-  stringArray: [Types.string()],  // define a primary type array
+  fixNumber: 520, // If a valid type was set, the valid type will be the value
+  fixString: 'this is a fixString',
+  plainObject: { // define a object array 
+    far: Types.string(),
+    bar: Types.number()
+  },  
+  stringArray: [Types.string()],  // define a primary type array
   objectArray: [{ // define a object array 
     far: Types.string(),
     bar: Types.number()
@@ -34,13 +45,16 @@ const mockerObject = Mocker.mockObject(objectSchema)
 
 // the mockerObject should like 
 // { 
-//   stringDate: '2030-12-31',
-//   stringRange: '3ybB5h_rJBziRVU2tgvetpPS_A_igv9TCmC0zUQntc0Rt95NwuG7qhltMpu44NzzLeSQpd9QZM',
-//   numberRange: '89.60',
-//   enum: 'A',
-//   default: 'HOwcCrCjD5',
-//   stringArray: [ 'jNB9tc' ],
-//   objectArray: [ { far: '3UAwBrab', bar: '965418.59' } ] 
+//   stringDate: '1941-10-03',
+//   stringRange: 'PKlDGzTY10pMZjYDIMtEWThTlXGcQE1gp2rYcStO2n52vw',
+//   numberRange: 62.61,
+//   enum: 'B',
+//   default: 'GXvmNy',
+//   fixNumber: 520, 
+//   fixString: 'this is a fixString',
+//   plainObject: { far: 'O0qBn', bar: 464255.58 },
+//   stringArray: [ 'X5iH5' ],
+//   objectArray: [ { far: '', bar: 574378.47 } ] 
 // }
 ```
 ## 3. Detail Types & API
@@ -86,6 +100,15 @@ Test result:
       ✓ numberRange should be between 0-100
       ✓ default should be a string
       ✓ enum should be one of the array
+```
+
+You can also clone it run the test by youself.
+
+``` js
+git clone https://github.com/UnPourTous/mocker.git
+cd mocker
+yarn 
+yarn run test
 ```
 
 ## 5. Thanks 

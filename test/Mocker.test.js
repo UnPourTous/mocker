@@ -9,7 +9,8 @@ describe('Mocker', function () {
         stringRange: Types.string().range(10, 100),
         numberRange: Types.number().range(0, 100),
         enum: Types.enum(['A', 'B', 'C']),
-        default: '',
+        fixNumber: 520,
+        fixString: 'this is a fixString',
         plainObject: {
           far: Types.string(),
           bar: Types.number()
@@ -36,8 +37,12 @@ describe('Mocker', function () {
         expect(mockerObject.numberRange).be.least(0).and.most(100)
       })
 
-      it(`default should be a string`, function () {
-        expect(mockerObject.default).be.a('string')
+      it(`fixNumber should be 520`, function () {
+        expect(mockerObject.fixNumber).to.equal(520)
+      })
+
+      it(`fixString should be "this is a fixString"`, function () {
+        expect(mockerObject.fixString).to.equal('this is a fixString')
       })
 
       it(`enum should be one of the array`, function () {

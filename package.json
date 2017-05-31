@@ -1,6 +1,6 @@
 {
   "name": "@unpourtous/mocker",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Mocker data generator",
   "main": "index.js",
   "scripts": {

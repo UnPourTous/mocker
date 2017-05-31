@@ -13,7 +13,7 @@ export default class Mocker {
     for (let key in objConfig) {
       let valueType = objConfig[key]
       if (!valueType) {
-        result[key] = Mocker.mockValue(Types.string())
+        result[key] = valueType
       } else {
         if (Mocker._isValidType(valueType)) {
           result[key] = Mocker.mockValue(valueType)
@@ -27,7 +27,7 @@ export default class Mocker {
               result[key] = [Mocker.mockObject(valueType[0])]
             }
           } else {
-            result[key] = Mocker.mockValue(Types.string())
+            result[key] = valueType
           }
         }
       }
