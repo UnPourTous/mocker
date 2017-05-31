@@ -13,12 +13,17 @@ a) First, define your object, the object schema.
 
 ``` js
 import { Types } from '@unpourtous/mocker'
-let objectSchema = {
+const objectSchema = {
   stringDate: Types.string('date'),
   stringRange: Types.string().range(10, 100),
   numberRange: Types.number().range(0, 100),
   enum: Types.enum(['A', 'B', 'C']),
-  default: '',
+  default: '', // If a valid type was set, it will generate a random string
+  stringArray: [Types.string()],  // define a primary type array
+  objectArray: [{ // define a object array 
+    far: Types.string(),
+    bar: Types.number()
+  }]
 }
 ```
 b) Secondly, use Mocker to generate a random object.
@@ -26,13 +31,16 @@ b) Secondly, use Mocker to generate a random object.
 ``` js
 import { Mocker } from '@unpourtous/mocker'
 const mockerObject = Mocker.mockObject(objectSchema)
-// the result should like 
+
+// the mockerObject should like 
 // { 
-//   stringDate: '1980-11-31',
-//   stringRange: 'Lnin392dBA_TlK',
-//   numberRange: '50.82',
-//   enum: 'C',
-//   default: 'Z' 
+//   stringDate: '2030-12-31',
+//   stringRange: '3ybB5h_rJBziRVU2tgvetpPS_A_igv9TCmC0zUQntc0Rt95NwuG7qhltMpu44NzzLeSQpd9QZM',
+//   numberRange: '89.60',
+//   enum: 'A',
+//   default: 'HOwcCrCjD5',
+//   stringArray: [ 'jNB9tc' ],
+//   objectArray: [ { far: '3UAwBrab', bar: '965418.59' } ] 
 // }
 ```
 ## 3. Detail Types & API
