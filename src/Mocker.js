@@ -18,13 +18,13 @@ export default class Mocker {
         if (Mocker._isValidType(valueType)) {
           result[key] = Mocker.mockValue(valueType)
         } else {
-          if (_.isObject(valueType)) {
+          if (_.isPlainObject(valueType)) {
             result[key] = Mocker.mockObject(valueType)
           } else if (_.isArray(valueType)) {
             if (Mocker._isValidType(valueType[0])) {
               result[key] = [Mocker.mockValue(valueType[0])]
             } else {
-              result[key] = [Mocker.mockObject()]
+              result[key] = [Mocker.mockObject(valueType[0])]
             }
           } else {
             result[key] = Mocker.mockValue(Types.string())

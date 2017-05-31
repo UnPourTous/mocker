@@ -3,15 +3,22 @@ const expect = require('chai').expect
 import { Mocker, Types } from '../'
 describe('Mocker', function () {
   describe('mockerObject', function () {
-    for (let i = 0; i < 40; i++) {
-      const mockerObject = Mocker.mockObject({
+    for (let i = 0; i < 50; i++) {
+      const objectSchema = {
         stringDate: Types.string('date'),
         stringRange: Types.string().range(10, 100),
         numberRange: Types.number().range(0, 100),
         enum: Types.enum(['A', 'B', 'C']),
         default: '',
+        stringArray: [Types.string()],
+        objectArray: [{
+          far: Types.string(),
+          bar: Types.number()
+        }]
+      }
+      const mockerObject = Mocker.mockObject(objectSchema)
 
-      })
+      console.log(mockerObject)
 
       it(`stringRange.length should be between 10-100`, function () {
         expect(mockerObject.stringRange.length).be.least(10).and.most(100);
@@ -31,6 +38,16 @@ describe('Mocker', function () {
 
       it(`enum should be one of the array`, function () {
         expect(mockerObject.enum).to.be.oneOf(['A', 'B', 'C'])
+      })
+
+      it(`stringArray should be an array contains string`, function () {
+        expect(mockerObject.stringArray).to.be.an('array')
+        expect(mockerObject.stringArray[0]).to.be.an('string')
+      })
+
+      it(`objectArray should be an array contains object`, function () {
+        expect(mockerObject.objectArray).to.be.an('array')
+        expect(mockerObject.objectArray[0]).to.be.an('object')
       })
     }
   })
