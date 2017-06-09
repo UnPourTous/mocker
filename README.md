@@ -116,7 +116,11 @@ yarn run test
 - [Numeral.js](http://numeraljs.com/) as number format library
 - [Chai](http://chaijs.com) as test assert library
 - [Mocha](https://mochajs.org/) as test framework
-## 6. License
+
+## 6. TODO
+1. Add browser support
+
+## 7. License
 MIT
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2FUnPourTous%2Fmocker.svg?type=large)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2FUnPourTous%2Fmocker?ref=badge_large)
