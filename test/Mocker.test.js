@@ -1,6 +1,9 @@
 const expect = require('chai').expect
 
-import { Mocker, Types } from '../'
+// import { Mocker, Types } from '../dist'
+
+const { Mocker, Types } = require('../dist')
+
 describe('Mocker', function () {
   describe('mockerObject', function () {
     for (let i = 0; i < 1; i++) {
