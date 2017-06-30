@@ -1,3 +1,5 @@
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+
 const config = {
   entry: {
     main: __dirname + '/src/index.js',
@@ -11,7 +13,10 @@ const config = {
     rules: [
       {test: /\.js$/, use: 'babel-loader'}
     ]
-  }
+  },
+  plugins: [
+    new UglifyJSPlugin()
+  ]
 }
 module.exports = config
 
