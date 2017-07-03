@@ -1,8 +1,8 @@
 /**
  * Created by erichua on 16/05/2017.
  */
+import * as _ from './tools'
 const numeral = require('numeral')
-const _ = require('lodash')
 const RandExp = require('randexp')
 
 class TPNumber {

@@ -1,7 +1,16 @@
 const expect = require('chai').expect
 
-import { Mocker, Types } from '../'
+import { Mocker as MockerES6, Types as TypesES6} from '../dist'
+
+const { Mocker, Types } = require('../dist')
+
 describe('Mocker', function () {
+  describe('module', function () {
+    it('es6 export test', function () {
+      const mockerObject = MockerES6.mockObject({str: TypesES6.string('date')})
+      expect(new RegExp(/(19|20)\d\d([-])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])/).test(mockerObject))
+    })
+  })
   describe('mockerObject', function () {
     for (let i = 0; i < 1; i++) {
       const objectSchema = {

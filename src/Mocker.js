@@ -3,7 +3,7 @@
  */
 
 import Types from './Types'
-const _ = require('lodash')
+import * as _ from './tools'
 /**
  * mock tools base on react type
  */
