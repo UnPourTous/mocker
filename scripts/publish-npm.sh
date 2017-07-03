@@ -12,7 +12,7 @@ function resultCheckPoint()
 }
 
 version=`npm version patch`
-git tag v$version
+git tag $version
 npm publish --access public --verbose
 resultCheckPoint "NPM publish failed!"
 git push --tag
