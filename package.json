@@ -4,7 +4,9 @@
   "description": "Mocker data generator",
   "main": "dist/index.js",
   "scripts": {
-    "test": "./node_modules/webpack/bin/webpack.js && ./node_modules/mocha/bin/mocha  --require babel-register"
+    "test": "./node_modules/webpack/bin/webpack.js && ./node_modules/mocha/bin/mocha  --require babel-register",
+    "build": "./node_modules/webpack/bin/webpack.js",
+    "release": "./node_modules/webpack/bin/webpack.js && ./scripts/publish-npm.sh"
   },
   "repository": {
     "type": "git",
@@ -26,7 +28,7 @@
     "babel-preset-stage-2": "^6.24.1",
     "babel-preset-stage-3": "^6.24.1",
     "babel-register": "^6.24.1",
-    "chai": "^3.5.0",
+    "chai": "^4.0.0",
     "mocha": "^3.4.1",
     "uglify-js": "git://github.com/mishoo/UglifyJS2#harmony-v2.8.22",
     "uglifyjs-webpack-plugin": "^0.4.6",

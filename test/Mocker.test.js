@@ -10,6 +10,11 @@ describe('Mocker', function () {
       const mockerObject = MockerES6.mockObject({str: TypesES6.string('date')})
       expect(new RegExp(/(19|20)\d\d([-])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])/).test(mockerObject))
     })
+
+    it('cmd export test', function () {
+      const mockerObject = Mocker.mockObject({str: Types.string('date')})
+      expect(new RegExp(/(19|20)\d\d([-])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])/).test(mockerObject))
+    })
   })
   describe('mockerObject', function () {
     for (let i = 0; i < 1; i++) {
@@ -21,12 +26,12 @@ describe('Mocker', function () {
         fixNumber: 520,
         fixString: 'this is a fixString',
         plainObject: {
-          far: Types.string(),
+          foo: Types.string(),
           bar: Types.number()
         },
         stringArray: [Types.string()],
         objectArray: [{
-          far: Types.string(),
+          foo: Types.string(),
           bar: Types.number()
         }]
       }
@@ -60,7 +65,7 @@ describe('Mocker', function () {
 
       it(`plainObject should be an object`, function () {
         expect(mockerObject.plainObject).to.be.an('object')
-        expect(mockerObject.plainObject.far).to.be.an('string')
+        expect(mockerObject.plainObject.foo).to.be.an('string')
         expect(mockerObject.plainObject.bar).to.be.a('number')
       })
 
