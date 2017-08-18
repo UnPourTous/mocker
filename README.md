@@ -1,6 +1,8 @@
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2FUnPourTous%2Fmocker.svg?type=shield)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2FUnPourTous%2Fmocker?ref=badge_shield)
 [![npm version](https://badge.fury.io/js/%40unpourtous%2Fmocker.svg)](https://badge.fury.io/js/%40unpourtous%2Fmocker)
 [![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
 # Mocker
 ## 0. Introduction
 Mocker is a simple and lightweight library which is used for generating random js object as defined schema. 
