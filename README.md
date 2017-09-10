@@ -117,4 +117,8 @@ yarn run test
 ## 7. License
 MIT
 
+## Refs 
+- http://babeljs.io/docs/plugins/transform-es2015-modules-umd/
+- http://krasimirtsonev.com/blog/article/javascript-library-starter-using-webpack-es6
+
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2FUnPourTous%2Fmocker.svg?type=large)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2FUnPourTous%2Fmocker?ref=badge_large)
