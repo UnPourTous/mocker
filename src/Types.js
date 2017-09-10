@@ -106,6 +106,10 @@ class TPString {
   }
 
   random () {
+    if (this._fixValue && _.isString(this._fixValue)) {
+      return this._fixValue
+    }
+
     if (this._regExp) {
       return new RandExp(this._regExp).gen()
     } else {
@@ -129,6 +133,10 @@ class TPBoolean {
   }
 
   random () {
+    if (this._fixValue && _.isBoolean(this._fixValue)) {
+      return this._fixValue
+    }
+
     return (parseInt(Math.random() * 100)) % 2
   }
 }
@@ -147,6 +155,10 @@ class TPEnum {
   }
 
   random () {
+    if (this._fixValue && this._enumVals.indexOf(this._fixValue) !== -1) {
+      return this._fixValue
+    }
+
     const index = parseInt(Math.random() * this._enumVals.length)
     return this._enumVals[index]
   }
