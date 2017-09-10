@@ -94,15 +94,7 @@ All test case was put in `test/`.
 
 Test result: 
 
-```
-  Mocker
-    mockerObject
-      ✓ stringRange.length should be between 10-100
-      ✓ stringDate should be a date
-      ✓ numberRange should be between 0-100
-      ✓ default should be a string
-      ✓ enum should be one of the array
-```
+![image](https://user-images.githubusercontent.com/1309744/30246148-2022bde8-9624-11e7-8ccb-fa24ef143b27.png)
 
 You can also clone it run the test by youself.
 
