@@ -33,11 +33,20 @@ describe('Mocker', function () {
         objectArray: [{
           foo: Types.string(),
           bar: Types.number()
-        }]
+        }],
+        emptyArray: [],
+        mixArray: [{
+          foo: Types.string(),
+          bar: Types.number()
+        }, {
+          foo1: Types.string(),
+        }],
+        deepArray: [[{foo: 1}]],
+        deepMixArray: [{foo: [{bar: Types.string().range(3, 4)}]}],
       }
-      const mockerObject = Mocker.mockObject(objectSchema)
+      const mockerObject = Mocker.mock(objectSchema)
 
-      console.log(mockerObject)
+      console.log(JSON.stringify(mockerObject, '  '))
 
       it(`stringRange.length should be between 10-100`, function () {
         expect(mockerObject.stringRange.length).be.least(10).and.most(100);
@@ -77,6 +86,25 @@ describe('Mocker', function () {
       it(`objectArray should be an array contains object`, function () {
         expect(mockerObject.objectArray).to.be.an('array')
         expect(mockerObject.objectArray[0]).to.be.an('object')
+      })
+
+      it(`empty array should be an empty array`, function () {
+        expect(mockerObject.emptyArray).to.be.an('array')
+        expect(mockerObject.emptyArray.length).to.be.equal(0)
+      }),
+
+      it(`mix array should be an mix array`, function () {
+        expect(mockerObject.mixArray).to.be.an('array')
+        expect(mockerObject.mixArray.length).to.be.equal(2)
+        expect(mockerObject.mixArray[0].foo).to.be.an('string')
+        expect(mockerObject.mixArray[1].foo1).to.be.an('string')
+        expect(mockerObject.mixArray[1].bar).to.equal(undefined)
+      })
+      it(`deep array should be an deep array`, function () {
+        expect(mockerObject.deepArray[0][0].foo).to.equal(1)
+      })
+      it(`deepMixArray array should be an deepMixArray`, function () {
+        expect(mockerObject.deepMixArray[0].foo[0].bar).to.be.an('string')
       })
     }
   })
