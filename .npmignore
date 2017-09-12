@@ -1,2 +1,6 @@
 .babelrc
 !./dist/index.js
+src/
+scripts/
+test/
+webpack.config.js
