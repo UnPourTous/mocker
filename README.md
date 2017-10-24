@@ -2,7 +2,7 @@
 [![npm version](https://badge.fury.io/js/%40unpourtous%2Fmocker.svg)](https://badge.fury.io/js/%40unpourtous%2Fmocker)
 [![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-
+[![Build Status](https://travis-ci.org/UnPourTous/mocker.svg?branch=master)](https://travis-ci.org/UnPourTous/mocker)
 # Mocker
 ## 0. Introduction
 Mocker is a simple and lightweight library which is used for generating random js object as defined schema. 
